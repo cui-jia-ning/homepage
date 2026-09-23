@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>崔家宁 - 个人主页</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #7dd3fc;
+      --border: #334155;
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, "Segoe UI", "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    nav .logo { font-weight: 700; font-size: 1.1rem; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav a { color: var(--text-muted); font-size: 0.9rem; }
+    nav a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 24px;
+    }
+    .hero .links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent-hover); color: var(--bg); }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { background: var(--surface); }
+
+    /* Section */
+    section { padding: 60px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .about-card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--accent); }
+    .about-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .project-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .project-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .tag {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+    }
+    .project-links { display: flex; gap: 12px; }
+    .project-links a { font-size: 0.85rem; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      nav ul { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="logo">CJN</span>
+      <ul>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#projects">作品</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>崔家宁</h1>
+      <p>南京大学学生，热爱编程与工具开发。关注前端、音频处理与效率工具。</p>
+      <div class="links">
+        <a href="https://github.com/cui-jia-ning" class="btn btn-primary" target="_blank">GitHub</a>
+        <a href="#projects" class="btn btn-outline">查看作品</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>教育</h3>
+          <p>南京大学</p>
+        </div>
+        <div class="about-card">
+          <h3>技术栈</h3>
+          <p>C / Python / JavaScript / HTML</p>
+        </div>
+        <div class="about-card">
+          <h3>兴趣方向</h3>
+          <p>效率工具、音频处理、前端开发</p>
+        </div>
+        <div class="about-card">
+          <h3>当前状态</h3>
+          <p>持续学习中，欢迎交流</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">作品</h2>
+      <div class="project-grid">
+
+        <!-- 复制下面的 .project-card 块来添加新作品 -->
+        <div class="project-card">
+          <h3>Audio Live Translate</h3>
+          <p>捕获电脑播放的音频，实时语音识别并翻译成中文，桌面置顶悬浮窗显示原文与译文。</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Whisper</span>
+            <span class="tag">桌面应用</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/cui-jia-ning/audio-live-translate" target="_blank">源码</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>NJU Vocab Filter</h3>
+          <p>南京大学大学英语通用词汇网页版阅读与单词筛选工具，纯前端，可离线使用。</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">教育工具</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/cui-jia-ning/nju-vocab-filter" target="_blank">源码</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Daily C Practice</h3>
+          <p>南京大学 C 语言每日练习，涵盖 CPL 与 OJ 题目。</p>
+          <div class="tags">
+            <span class="tag">C</span>
+            <span class="tag">算法</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/cui-jia-ning/daily-c" target="_blank">源码</a>
+          </div>
+        </div>
+
+        <!-- 添加新作品：复制上方 .project-card 块，修改内容即可 -->
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">联系我</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/cui-jia-ning" target="_blank">github.com/cui-jia-ning</a></p>
+        </div>
+        <div class="about-card">
+          <h3>邮箱</h3>
+          <p>待添加</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 崔家宁
+    </div>
+  </footer>
+
+</body>
+</html>
